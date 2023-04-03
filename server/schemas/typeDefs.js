@@ -1,19 +1,24 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Bankroll {
-    id: ID!
-    name: String!
-    amount: Float!
-  }
+ type Entry {
+  id: ID!
+  date: String!
+  location: String!
+  buyIn: Float!
+  cashOut: Float!
+  hours: Float!
+  stake: String!
+  gameType: String!
+}
 
-  type Query {
-    bankrolls: [Bankroll!]!
-  }
+type Query {
+  entries: [Entry]
+}
 
-  type Mutation {
-    addBankroll(name: String!, amount: Float!): Bankroll!
-  }
+type Mutation {
+  addEntry(date: String!, location: String!, buyIn: Float!, cashOut: Float!, hours: Float!, stake: String!): Entry
+}
 `;
 
 module.exports = typeDefs

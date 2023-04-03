@@ -1,23 +1,39 @@
-const Bankroll = require('../models/Bankroll')
+const Entry = require('../models/Entry')
 
 const resolvers = {
     Query: {
-        bankrolls: async (parent, args, { models }) => {
-            return models.Bankroll.find();
-        },
+        entries: async () => {
+            try {
+                const entries = await Entry.find()
+                return entries
+            }
+            catch (err) {
+                throw new Error(err)
+            }
+        }
     },
 
     Mutation: {
-        addBankroll: async (parent, { name, amount }, { models }) => {
-            const bankroll = new models.Bankroll({
-                name,
-                amount,
-            });
+        addEntry: async (_, { entryInput }) => {
+            const { date, location, buyIn, cashOut, hours, stake } = entryInput;
 
-            await bankroll.save();
-            return bankroll;
+            try {
+                const newEntry = new Entry({
+                    date,
+                    location,
+                    buyIn,
+                    cashOut,
+                    hours,
+                    stake,
+                });
+
+                const savedEntry = await newEntry.save();
+                return savedEntry;
+            } catch (err) {
+                throw new Error(err);
+            }
         },
     },
 };
 
-module.exports = resolvers 
+module.exports = resolvers  

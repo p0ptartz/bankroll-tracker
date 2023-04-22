@@ -4,5 +4,5 @@
     grid-gap: .5em;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-template-rows: 140px 100px 100px 100px 100px 100px ;
-    margin-right: .5em;
+    margin-right: 1em;
 }

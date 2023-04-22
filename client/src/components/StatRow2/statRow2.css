@@ -2,6 +2,34 @@
     grid-area: 3/ 2 / 6 / 6 ;
 }
 
-.most-recent{
-    grid-area: 3 / 6 / 6 / 9 ; 
+.most-recent-container {
+    
+    grid-area: 3 / 6 / 6 / 9;
+}
+
+.most-recent {
+    /* background-color: rgba(40, 61, 82, 0.753); */
+    display: grid;
+    grid-gap: .3em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 70px 70px 70px 70px 70px;
+    max-height: 315px; 
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.recent-header,
+.recent-session{
+    background-color: rgba(40, 61, 82, 0.753); 
+   
+}
+
+.most-recent::-webkit-scrollbar {
+    background-color: #3a4e61; /* Set the background color of the scrollbar track */
+    
+    width: 0.5em; /* Set the width of the scrollbar */
+}
+.most-recent::-webkit-scrollbar-thumb {
+    background-color: #5f6e7e; /* Set the color of the scrollbar thumb */
+    
 }

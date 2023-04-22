@@ -1,0 +1,8 @@
+.dashboard-grid {
+    background-color: rgb(21, 33, 43);
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 140px 100px 100px 100px 100px 100px ;
+    margin-right: .5em;
+}

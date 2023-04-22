@@ -1,0 +1,7 @@
+.graph-item-1{
+    grid-area: 3/ 2 / 6 / 6 ;
+}
+
+.most-recent{
+    grid-area: 3 / 6 / 6 / 9 ; 
+}

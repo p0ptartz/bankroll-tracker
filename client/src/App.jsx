@@ -1,7 +1,8 @@
 import { ApolloClient, ApolloProvider, InMemoryCache, } from '@apollo/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Entry from './components/Entry/entry';
+import "./App.css"
+import Landing from './components/Landing/landing';
+import Dashboard from './components/Dashboard/dashboard';
 
 const cache = new InMemoryCache();
 
@@ -23,7 +24,16 @@ function App() {
             path="/"
             element={
               <>
-                <Entry />
+                <Landing />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/dashboard"
+            element={
+              <>
+                <Dashboard />
               </>
             }
           />

@@ -20,7 +20,7 @@ function Landing() {
     }, []);
 
     return (
-        <div>
+        <div className="landing-container">
             {/* <!-- NAV BAR --> */}
 
             <nav className="navbar navbar-expand-lg py-3 fixed-top ">

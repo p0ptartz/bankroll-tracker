@@ -2,3 +2,10 @@
     background-color: rgb(27, 36, 54);
 }
 
+p,
+h1,
+h2,
+h3,
+h4{
+    margin: 0 !important;
+}

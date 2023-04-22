@@ -18,12 +18,29 @@
     z-index: 1;
 }
 
+
 .recent-header,
 .recent-session{
     background-color: rgba(40, 61, 82, 0.753); 
-   
+   color: white;
+}
+.recent-session-p{
+    color: rgb(207, 207, 100);
+    line-height: 1;
+}
+.recent-date{
+    font-size: small;
 }
 
+.recent-session-location{
+    color: #b9babb;
+    font-size: small;
+}
+
+.win-loss{
+    color: rgb(5, 197, 5);
+    font-weight: bold;
+}
 .most-recent::-webkit-scrollbar {
     background-color: #3a4e61; /* Set the background color of the scrollbar track */
     

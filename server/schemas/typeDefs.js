@@ -10,12 +10,6 @@ type User {
   password: String!
 }
 
-type AuthPayload {
-    token: String!
-    expiresIn: Int!
-    user: User!
-  }
-
  type Entry {
   id: ID!
   date: String!
@@ -33,8 +27,8 @@ type Query {
 }
 
 type Mutation {
-  signup(firstName: String!, lastName: String, email: String!, password: String!, profilePicture: String): AuthPayload
-  login(email: String!, password: String!): AuthPayload
+  signup(firstName: String!, lastName: String, email: String!, password: String!, profilePicture: String): User
+  login(email: String!, password: String!): User
   logout: String
   addEntry(date: String!, location: String!, buyIn: Float!, cashOut: Float!, hours: Float!, stake: String!): Entry
 }

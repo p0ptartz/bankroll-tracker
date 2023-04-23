@@ -11,9 +11,9 @@ const seedTestData = async () => {
     try {
         // create a new user
         const newUser = new User({
-            firstName: 'John',
-            lastName: 'Doe',
-            email: 'john.doe@example.com',
+            firstName: 'Sammy',
+            lastName: 'DAbull',
+            email: 'BULL@example.com',
             password: 'password123'
         });
 
@@ -22,13 +22,13 @@ const seedTestData = async () => {
 
         // create a new entry
         const newEntry = new Entry({
-            date: '2023-04-22',
+            date: '2023-05-25',
             location: 'Las Vegas',
-            buyIn: 100,
-            cashOut: 200,
-            hours: 3,
-            stake: 'NLH',
-            gameType: 'Cash Game',
+            buyIn: 1000,
+            cashOut: 2500,
+            hours: 7,
+            stake: '2/5',
+            gameType: 'PLO',
             user: savedUser._id // set the user reference to the saved user's _id
         });
 

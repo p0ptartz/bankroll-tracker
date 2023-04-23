@@ -1,12 +1,12 @@
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
 const mongoose = require('mongoose');
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 const db = require('../server/config/connection');
 const { typeDefs, resolvers } = require('./schemas');
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3022;
 const app = express();
 
 const server = new ApolloServer({

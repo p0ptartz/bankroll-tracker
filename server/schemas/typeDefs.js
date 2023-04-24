@@ -24,7 +24,8 @@ type User {
 
 type Query {
   entries: [Entry]
-  users: [User]
+  getUser(userId: ID!): User
+  getEntries(userId: ID!): [Entry]
 }
 
 type Mutation {

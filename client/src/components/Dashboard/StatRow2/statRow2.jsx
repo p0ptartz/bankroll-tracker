@@ -1,19 +1,19 @@
 import React from "react";
 import "./statRow2.css"
 
-import { GET_ENTRIES } from "../../utils/queries/entryQuery";
-import { useQuery } from "@apollo/client";
+// import { GET_ENTRIES } from "../../utils/queries/entryQuery";
+// import { useQuery } from "@apollo/client";
 
 
 
 
-export default function StatRow2() {
+function StatRow2() {
 
-    const { loading, error, data } = useQuery(GET_ENTRIES)
+    // const { loading, error, data } = useQuery(GET_ENTRIES)
 
     // checking if data is not null or undefined before accessing data.entries
-    const filteredEntry = data && data.entries ? data.entries : [];
-    console.log(filteredEntry)
+    // const filteredEntry = data && data.entries ? data.entries : [];
+    // console.log(filteredEntry)
 
     return (
         <>
@@ -52,3 +52,5 @@ export default function StatRow2() {
         </>
     )
 }
+
+export default StatRow2

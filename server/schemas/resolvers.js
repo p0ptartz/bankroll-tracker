@@ -13,7 +13,24 @@ const resolvers = {
             catch (err) {
                 throw new Error(err)
             }
-        }
+        },
+        getUser: async (_, { userId }) => {
+            try {
+                const user = await User.findById(userId);
+                return user;
+            } catch (err) {
+                throw new Error('Error getting user');
+            }
+        },
+        getEntries: async (_, { userId }) => {
+            try {
+                const entries = await Entry.find({ userId });
+                return entries;
+            } catch (err) {
+                throw new Error('Error getting entries');
+            }
+        },
+
     },
 
     Mutation: {
@@ -67,11 +84,12 @@ const resolvers = {
             }
         },
 
-        addEntry: async (_, { date, location, buyIn, cashOut, hours, stake, gameType }) => {
+        addEntry: async (_, { userId, date, location, buyIn, cashOut, hours, stake, gameType }) => {
 
 
             try {
                 const newEntry = new Entry({
+                    userId,
                     date,
                     location,
                     buyIn,

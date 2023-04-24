@@ -1,7 +1,20 @@
 import React from "react";
 import "./statRow2.css"
 
+import { GET_ENTRIES } from "../../utils/queries/entryQuery";
+import { useQuery } from "@apollo/client";
+
+
+
+
 export default function StatRow2() {
+
+    const { loading, error, data } = useQuery(GET_ENTRIES)
+
+    // checking if data is not null or undefined before accessing data.entries
+    const filteredEntry = data && data.entries ? data.entries : [];
+    console.log(filteredEntry)
+
     return (
         <>
             <div className="graph-item-1 stat-item">
@@ -22,7 +35,7 @@ export default function StatRow2() {
 
                     </div>
                     <div className="recent-session">
-
+                        <p></p>
                     </div>
                     <div className="recent-session">
 

@@ -19,10 +19,14 @@ const resolvers = {
     Mutation: {
         signup: async (_, { firstName, lastName, email, password }) => {
             try {
+                // Check if email address already exists in the database
+                const existingUser = await User.findOne({ email });
+                if (existingUser) {
+                    throw new Error('Email address already exists');
+                }
 
                 const salt = await bcrypt.genSalt(10);
                 const hashedPassword = await bcrypt.hash(password, salt);
-
 
                 const newUser = new User({
                     firstName,
@@ -31,16 +35,14 @@ const resolvers = {
                     password: hashedPassword
                 });
 
-                // save the user to the database
+                // Save the user to the database
                 const savedUser = await newUser.save();
-
 
                 return savedUser;
             } catch (error) {
                 throw new Error('Error creating user');
             }
         },
-
         login: async (_, { email, password }) => {
             try {
                 // find the user by email

@@ -10,7 +10,11 @@ function LandingLogin() {
                 <div className="form-modal-container">
 
                     <form id="loginForm">
-                        <h2>Login</h2>
+                        <div className="exit-modal">
+                            <h2>Login</h2>
+                            <p className="exit-btn">X</p>
+                        </div>
+
                         <input type="email" className="form-input" placeholder="Email*" required></input>
                         <input type="password" className="form-input" placeholder="Password*" required></input>
                         <button type="submit" className="form-submit">Login</button>
@@ -26,17 +30,3 @@ function LandingLogin() {
 
 export default LandingLogin
 
-
-
-
-
-                    // <form id="signupForm" >
-                    //     <h2>Sign Up</h2>
-                    //     <input type="text" className="form-input" placeholder="First Name*" required></input>
-                    //     <input type="text" className="form-input" placeholder="Last Name" ></input>
-                    //     <input type="email" className="form-input" placeholder="Email*" required></input>
-                    //     <input type="password" className="form-input" placeholder="Password*" required></input>
-                    //     <button type="submit" className="form-submit">Sign Up</button>
-                    // </form >
-
-                    // 

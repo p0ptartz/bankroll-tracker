@@ -104,3 +104,14 @@
   .form-submit:hover {
     background-color: #0056b3;
   }
+
+  .exit-modal {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+
+  .close-btn{
+    cursor: pointer;
+  }

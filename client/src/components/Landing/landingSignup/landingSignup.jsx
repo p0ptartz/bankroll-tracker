@@ -1,9 +1,39 @@
 import { React, useState } from "react";
 import LandingBody from "../landingBody/landingBody";
+import { useMutation } from "@apollo/client"
+import { SIGNUP_MUTATION } from "../../../utils/mutations/signupMutation";
+import { useNavigate } from "react-router-dom";
 
 function LandingSignup() {
-
+    const navigate = useNavigate()
     const [showBody, setShowBody] = useState(false);
+    const [signup, { loading, error }] = useMutation(SIGNUP_MUTATION)
+
+    const handleSignup = async (e) => {
+        e.preventDefault();
+        //input values
+        const firstName = e.target.firstName.value;
+        const lastName = e.target.lastName.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        try {
+            // signup mutation
+            const { data } = await signup({
+                variables: { firstName, lastName, email, password },
+            });
+
+            // successful signup
+            console.log(data.signup);
+            navigate("/dashboard")
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
+
+    };
 
     const handleCloseButtonClick = () => {
         setShowBody(true);
@@ -20,16 +50,16 @@ function LandingSignup() {
 
                 <div className="form-modal-container">
 
-                    <form id="signupForm" >
+                    <form id="signupForm" onSubmit={handleSignup} >
                         <div className="exit-modal">
                             <h2>Sign Up</h2>
                             <p className="close-btn" onClick={handleCloseButtonClick}>X</p>
                         </div>
 
-                        <input type="text" className="form-input" placeholder="First Name*" required></input>
-                        <input type="text" className="form-input" placeholder="Last Name" ></input>
-                        <input type="email" className="form-input" placeholder="Email*" required></input>
-                        <input type="password" className="form-input" placeholder="Password*" required></input>
+                        <input name="firstName" type="text" className="form-input" placeholder="First Name*" required></input>
+                        <input name="lastName" type="text" className="form-input" placeholder="Last Name" ></input>
+                        <input name="email" type="email" className="form-input" placeholder="Email*" required></input>
+                        <input name="password" type="password" className="form-input" placeholder="Password*" required></input>
                         <button type="submit" className="form-submit">Sign Up</button>
                     </form >
                     <p id="toggleForm" >Already have an account? Sign In</p>

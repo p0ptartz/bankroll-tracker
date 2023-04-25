@@ -1,18 +1,29 @@
-import React from "react";
+import { React, useState } from "react";
+import LandingBody from "../landingBody/landingBody";
 
 function LandingSignup() {
 
+    const [showBody, setShowBody] = useState(false);
+
+    const handleCloseButtonClick = () => {
+        setShowBody(true);
+    };
+
+    if (showBody) {
+        return <LandingBody showBody={showBody} />;
+    }
 
     return (
         <>
 
             <div className="form-modal">
+
                 <div className="form-modal-container">
 
                     <form id="signupForm" >
                         <div className="exit-modal">
                             <h2>Sign Up</h2>
-                            <p className="close-btn">X</p>
+                            <p className="close-btn" onClick={handleCloseButtonClick}>X</p>
                         </div>
 
                         <input type="text" className="form-input" placeholder="First Name*" required></input>
@@ -21,7 +32,7 @@ function LandingSignup() {
                         <input type="password" className="form-input" placeholder="Password*" required></input>
                         <button type="submit" className="form-submit">Sign Up</button>
                     </form >
-                    <p id="toggleForm">Already have an account? Sign In</p>
+                    <p id="toggleForm" >Already have an account? Sign In</p>
                 </div>
 
 

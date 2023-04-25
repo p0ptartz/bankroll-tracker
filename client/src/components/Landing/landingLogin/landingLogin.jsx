@@ -1,8 +1,17 @@
-import React from "react";
+import { React, useState } from "react";
+import LandingBody from "../landingBody/landingBody";
 
 function LandingLogin() {
 
+    const [showBody, setShowBody] = useState(false);
 
+    const handleCloseButtonClick = () => {
+        setShowBody(true);
+    };
+
+    if (showBody) {
+        return <LandingBody showBody={showBody} />;
+    }
     return (
         <>
 
@@ -12,7 +21,7 @@ function LandingLogin() {
                     <form id="loginForm">
                         <div className="exit-modal">
                             <h2>Login</h2>
-                            <p className="exit-btn">X</p>
+                            <p className="close-btn" onClick={handleCloseButtonClick}>X</p>
                         </div>
 
                         <input type="email" className="form-input" placeholder="Email*" required></input>

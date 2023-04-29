@@ -13,7 +13,8 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
     context: ({ req }) => {
-        // context code goes here
+        const userId = req.headers["user-id"];
+        return { userId }
     },
 });
 

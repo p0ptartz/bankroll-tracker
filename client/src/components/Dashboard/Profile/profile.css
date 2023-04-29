@@ -1,6 +1,11 @@
 .profile-container{
     background-color: rgba(40, 61, 82, 0.753);
-   
+    color: aliceblue;
     grid-row-end: 7;
     grid-row-start: 1;
+}
+
+.meh{
+    color: grey;
+    font-size: small;
 }

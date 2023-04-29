@@ -31,6 +31,7 @@ const resolvers = {
             }
         },
 
+
     },
 
     Mutation: {
@@ -63,18 +64,25 @@ const resolvers = {
         login: async (_, { email, password }) => {
             try {
                 // find the user by email
+                console.log('password:', password);
                 const user = await User.findOne({ email });
+                console.log("this works 1")
+                console.log(user)
 
 
                 if (!user) {
+                    console.log("this works 2")
                     throw new Error('Invalid email or password');
-                }
 
+                }
+                console.log("this works 3")
                 // compare the password with stored hashed password
                 const passwordMatch = await bcrypt.compare(password, user.password);
+                console.log('passwordMatch:', passwordMatch);
 
-
+                console.log("this works 4")
                 if (passwordMatch) {
+                    console.log(user)
                     return user;
                 } else {
                     throw new Error('Invalid email or password');
@@ -96,7 +104,8 @@ const resolvers = {
                     cashOut,
                     hours,
                     stake,
-                    gameType
+                    gameType,
+
                 });
 
                 const savedEntry = await newEntry.save();

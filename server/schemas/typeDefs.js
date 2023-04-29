@@ -3,11 +3,12 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
 
 type User {
-  _id: ID!
+  id: ID!
   firstName: String!
   lastName: String
   email: String!
   password: String!
+  entries: [Entry]
 }
 
  type Entry {
@@ -19,6 +20,7 @@ type User {
   hours: Float!
   stake: String!
   gameType: String!
+  user: User
 }
 
 
@@ -32,7 +34,7 @@ type Mutation {
   signup(firstName: String!, lastName: String, email: String!, password: String!, profilePicture: String): User
   login(email: String!, password: String!): User
   logout: String
-  addEntry(date: String!, location: String!, buyIn: Float!, cashOut: Float!, hours: Float!, stake: String!, gameType: String!): Entry
+  addEntry(userId: ID!, date: String!, location: String!, buyIn: Float!, cashOut: Float!, hours: Float!, stake: String!, gameType: String!): Entry
 }
 `;
 

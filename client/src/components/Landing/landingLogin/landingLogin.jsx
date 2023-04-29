@@ -17,16 +17,20 @@ function LandingLogin() {
         const email = e.target.email.value
         const password = e.target.password.value
 
+
         try {
             const { data } = await login({
                 variables: { email, password },
             });
 
             // testing the data in the console
+            // console.log(data)
+            // const userId = data.login._id;
+            // console.log(userId)
+            // localStorage.setItem('userId', user._id);
             console.log(data)
-            const userId = data.login._id;
-            console.log(userId)
-
+            localStorage.setItem('userId', data.login.id);
+            console.log(data.login.id)
 
 
             console.log("WOOOO YOU DID IT")
@@ -34,7 +38,7 @@ function LandingLogin() {
             navigate("/dashboard");
 
         } catch (error) {
-            console.log("unlucky try again")
+            console.log("Error occurred:", error)
         }
     }
 

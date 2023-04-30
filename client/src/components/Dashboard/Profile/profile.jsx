@@ -6,7 +6,7 @@ function Profile() {
     const userId = localStorage.getItem('userId');
     console.log(userId)
 
-    const name = "Eric"
+    const name = "Eric1"
     const email = "ewmeyers@yahoo.com"
     return (
         <>

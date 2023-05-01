@@ -28,6 +28,7 @@ type Query {
   entries: [Entry]
   getUser(userId: ID!): User
   getEntries(userId: ID!): [Entry]
+  getUserEntries(userId: ID!): [Entry]
 }
 
 type Mutation {

@@ -16,7 +16,9 @@ const resolvers = {
         },
         getUser: async (_, { userId }) => {
             try {
-                const user = await User.findById(userId);
+                console.log('userId:', userId);
+                const user = await User.findById(userId)
+                console.log('user:', user);
                 return user;
             } catch (err) {
                 throw new Error('Error getting user');
@@ -24,15 +26,19 @@ const resolvers = {
         },
         getEntries: async (_, { userId }) => {
             try {
-                const entries = await Entry.find({ userId });
+                const entries = await Entry.findById(userId);
                 return entries;
             } catch (err) {
                 throw new Error('Error getting entries');
             }
         },
-
-
+        getUserEntries: async (_, { userId }) => {
+            const user = await User.findById(userId).populate('entries');
+            return user.entries;
+        },
     },
+
+
 
     Mutation: {
         signup: async (_, { firstName, lastName, email, password }) => {
@@ -96,11 +102,13 @@ const resolvers = {
         },
 
         addEntry: async (_, { userId, date, location, buyIn, cashOut, hours, stake, gameType }) => {
-
-
             try {
+                const user = await User.findById(userId)
+                if (!user) {
+                    throw new Error(`User with ID ${userId} not found`)
+                }
+                console.log("step1")
                 const newEntry = new Entry({
-                    userId,
                     date,
                     location,
                     buyIn,
@@ -108,16 +116,23 @@ const resolvers = {
                     hours,
                     stake,
                     gameType,
+                    user: userId // Link the entry to the user
+                })
+                console.log("step2" + newEntry)
 
-                });
-
-                const savedEntry = await newEntry.save();
-                return savedEntry;
-            } catch (err) {
-                throw new Error(err);
+                await newEntry.save()
+                console.log("step3")
+                // Update the user's entries field to include the new entry
+                user.entries.push(newEntry)
+                console.log("step4")
+                await user.save()
+                console.log("step5")
+                return newEntry
+            } catch (error) {
+                throw new Error('Error creating entry' + error)
             }
-        },
-    },
+        }
+    }
 };
 
 module.exports = resolvers

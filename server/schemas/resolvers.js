@@ -38,21 +38,24 @@ const resolvers = {
         signup: async (_, { firstName, lastName, email, password }) => {
             try {
                 // Check if email address already exists in the database
+                console.log("hello")
                 const existingUser = await User.findOne({ email });
                 if (existingUser) {
+                    console.log("user exists")
                     throw new Error('Email address already exists');
                 }
-
+                console.log("before bcrypt")
                 const salt = await bcrypt.genSalt(10);
+                console.log("this is salt " + salt)
                 const hashedPassword = await bcrypt.hash(password, salt);
-
+                console.log(hashedPassword)
                 const newUser = new User({
                     firstName,
                     lastName,
                     email,
                     password: hashedPassword
                 });
-
+                console.log("this is out" + newUser)
                 // Save the user to the database
                 const savedUser = await newUser.save();
 

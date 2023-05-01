@@ -16,15 +16,24 @@ function LandingSignup() {
         const lastName = e.target.lastName.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        console.log(firstName)
+        console.log(lastName)
+        console.log(email)
+        console.log(password)
+        console.log("the values work")
 
         try {
             // signup mutation
             const { data } = await signup({
                 variables: { firstName, lastName, email, password },
-            });
 
+            });
+            console.log("there is data below")
+            console.log(data)
+            // localStorage.setItem('userName', data.login.firstName);
+            // localStorage.setItem('email', data.login.email);
             // successful signup
-            console.log(data.signup);
+            console.log("wooooo you signed up")
             navigate("/dashboard")
 
         } catch (error) {

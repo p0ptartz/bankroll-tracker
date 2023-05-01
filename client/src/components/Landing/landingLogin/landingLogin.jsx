@@ -28,9 +28,10 @@ function LandingLogin() {
             // const userId = data.login._id;
             // console.log(userId)
             // localStorage.setItem('userId', user._id);
-            console.log(data)
-            localStorage.setItem('userId', data.login.id);
-            console.log(data.login.id)
+
+
+            localStorage.setItem('userName', data.login.firstName);
+            localStorage.setItem('email', data.login.email);
 
 
             console.log("WOOOO YOU DID IT")

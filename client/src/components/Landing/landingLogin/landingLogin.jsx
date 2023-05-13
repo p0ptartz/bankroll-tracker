@@ -27,7 +27,7 @@ function LandingLogin() {
             localStorage.setItem('userId', data.login.id)
             localStorage.setItem('userName', data.login.firstName);
             localStorage.setItem('email', data.login.email);
-            localStorage.setItem("userEntries", JSON.stringify(data.login.entries));
+
             // redirect to dashboard
             navigate("/dashboard");
 

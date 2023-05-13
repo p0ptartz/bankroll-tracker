@@ -30,9 +30,9 @@ function LandingSignup() {
             });
             console.log("there is data below")
             console.log(data)
-            // localStorage.setItem('userName', data.login.firstName);
-            // localStorage.setItem('email', data.login.email);
-            // successful signup
+            localStorage.setItem('userId', data.signup.id)
+            localStorage.setItem('userName', data.signup.firstName);
+            localStorage.setItem('email', data.signup.email);
             console.log("wooooo you signed up")
             navigate("/dashboard")
 

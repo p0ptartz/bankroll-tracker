@@ -8,7 +8,16 @@ login(email: $email, password: $password){
     lastName
     email
     password
-    
+    entries {
+        
+        date
+        location
+        buyIn
+        cashOut
+        hours
+        stake
+        gameType
+      }
 }
 }
 `

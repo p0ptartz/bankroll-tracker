@@ -9,3 +9,14 @@ h3,
 h4{
     margin: 0 !important;
 }
+
+.green {
+    color: rgb(5, 197, 5);
+}
+.red {
+    color: rgb(207, 34, 34);
+}
+
+.yellow {
+    color: rgb(241, 241, 112);
+}

@@ -24,17 +24,13 @@ const resolvers = {
                 throw new Error('Error getting user');
             }
         },
-        getEntries: async (_, { userId }) => {
-            try {
-                const entries = await Entry.findById(userId);
-                return entries;
-            } catch (err) {
-                throw new Error('Error getting entries');
-            }
-        },
+
         getUserEntries: async (_, { userId }) => {
             const user = await User.findById(userId).populate('entries');
+            console.log("this is the user: " + user)
+            console.log("here is the user.entries: " + user.entries)
             return user.entries;
+
         },
     },
 
@@ -74,7 +70,7 @@ const resolvers = {
             try {
                 // find the user by email
                 console.log('password:', password);
-                const user = await User.findOne({ email });
+                const user = await User.findOne({ email }).populate('entries');
                 console.log("this works 1")
                 console.log(user)
 
@@ -91,7 +87,9 @@ const resolvers = {
 
                 console.log("this works 4")
                 if (passwordMatch) {
-                    console.log(user)
+                    console.log("BELOWWWWWWWW")
+                    console.log("user: " + user)
+
                     return user;
                 } else {
                     throw new Error('Invalid email or password');
@@ -116,13 +114,13 @@ const resolvers = {
                     hours,
                     stake,
                     gameType,
-                    user: userId // Link the entry to the user
+                    user: userId
                 })
                 console.log("step2" + newEntry)
 
                 await newEntry.save()
                 console.log("step3")
-                // Update the user's entries field to include the new entry
+
                 user.entries.push(newEntry)
                 console.log("step4")
                 await user.save()

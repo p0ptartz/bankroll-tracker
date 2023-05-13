@@ -21,13 +21,13 @@ type User {
   stake: String!
   gameType: String!
   user: User
+  entries: [Entry]
 }
 
 
 type Query {
   entries: [Entry]
   getUser(userId: ID!): User
-  getEntries(userId: ID!): [Entry]
   getUserEntries(userId: ID!): [Entry]
 }
 

@@ -50,3 +50,10 @@
     background-color: #5f6e7e; /* Set the color of the scrollbar thumb */
     
 }
+
+.graph-item-1{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}

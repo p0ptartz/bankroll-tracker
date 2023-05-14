@@ -1,7 +1,9 @@
 #root{
     background-color: rgb(27, 36, 54);
 }
-
+html{
+    background-color: rgb(21, 33, 43);
+}
 p,
 h1,
 h2,

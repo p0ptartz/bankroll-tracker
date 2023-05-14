@@ -40,20 +40,28 @@ function StatRow2() {
     }
 
     const recentSessions = entries.slice(0, 5);
+
     const optionsChart = {
         plugins: {
             legend: true
         },
         scales: {
             x: {
+                grid: {
+                    color: 'rgba(0, 123, 173, 0.20)',
+                },
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    color: '#AFAFAF'
                 }
             },
             y: {
-
+                grid: {
+                    color: (context) => (context.tick.value === 0 ? '#B72D2D' : 'rgba(0, 123, 173, 0.20)'),
+                },
                 ticks: {
                     beginAtZero: true,
+                    color: '#AFAFAF'
 
                 }
             }
@@ -69,9 +77,11 @@ function StatRow2() {
                     const lastValue = accumulator.length > 0 ? accumulator[accumulator.length - 1] : 0;
                     return [...accumulator, lastValue + difference];
                 }, [])],
-                backgroundColor: 'black',
-                borderColor: 'white',
+                backgroundColor: '#EAEC87',
+                borderColor: '#2DB75E',
                 pointBorderColor: 'white',
+                borderWidth: 1.3,
+
             }
         ]
     };

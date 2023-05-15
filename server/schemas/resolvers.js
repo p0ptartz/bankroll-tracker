@@ -39,25 +39,24 @@ const resolvers = {
     Mutation: {
         signup: async (_, { firstName, lastName, email, password }) => {
             try {
-                // Check if email address already exists in the database
-                console.log("hello")
+
                 const existingUser = await User.findOne({ email });
                 if (existingUser) {
-                    console.log("user exists")
+
                     throw new Error('Email address already exists');
                 }
-                console.log("before bcrypt")
+
                 const salt = await bcrypt.genSalt(10);
-                console.log("this is salt " + salt)
+
                 const hashedPassword = await bcrypt.hash(password, salt);
-                console.log(hashedPassword)
+
                 const newUser = new User({
                     firstName,
                     lastName,
                     email,
                     password: hashedPassword
                 });
-                console.log("this is out" + newUser)
+
                 // Save the user to the database
                 const savedUser = await newUser.save();
 
@@ -69,26 +68,21 @@ const resolvers = {
         login: async (_, { email, password }) => {
             try {
                 // find the user by email
-                console.log('password:', password);
-                const user = await User.findOne({ email }).populate('entries');
-                console.log("this works 1")
-                console.log(user)
 
+                const user = await User.findOne({ email }).populate('entries');
 
                 if (!user) {
-                    console.log("this works 2")
+
                     throw new Error('Invalid email or password');
 
                 }
-                console.log("this works 3")
+
                 // compare the password with stored hashed password
                 const passwordMatch = await bcrypt.compare(password, user.password);
                 console.log('passwordMatch:', passwordMatch);
 
-                console.log("this works 4")
+
                 if (passwordMatch) {
-                    console.log("BELOWWWWWWWW")
-                    console.log("user: " + user)
 
                     return user;
                 } else {

@@ -22,12 +22,8 @@ function LandingLogin() {
             const { data } = await login({
                 variables: { email, password },
             });
-            console.log("hi")
-            console.log("Data: ", data);
-            localStorage.setItem('userId', data.login.id)
-            localStorage.setItem('userName', data.login.firstName);
-            localStorage.setItem('email', data.login.email);
 
+            localStorage.setItem('userId', data.login.id)
             // redirect to dashboard
             navigate("/dashboard");
 

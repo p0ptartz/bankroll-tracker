@@ -22,3 +22,19 @@ h4{
 .yellow {
     color: rgb(241, 241, 112);
 }
+
+.aqua {
+    color: rgb(71, 216, 197);
+}
+
+.purple{
+    color: rgb(147, 135, 253);
+}
+
+.session-btn {
+    background-color: rgb(69, 56, 184);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: smaller;
+}

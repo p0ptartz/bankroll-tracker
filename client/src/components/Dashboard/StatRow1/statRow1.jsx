@@ -68,7 +68,7 @@ export default function StatRow1() {
                 <div className="mx-3 h-100 d-flex justify-content-between align-items-center total-hours">
                     <p className="">Total Hours Played:</p>
 
-                    <p className={`${hourSum >= 0 ? 'yellow' : 'red'}`}>
+                    <p className={`${hourSum >= 0 ? 'purple' : 'red'}`}>
                         {hourSum}
                     </p>
                 </div>
@@ -84,7 +84,7 @@ export default function StatRow1() {
             </div>
             <div className="stat-item-3 stat-item">
                 <div className="mx-3 h-100 d-flex justify-content-between align-items-center total-hours">
-                    <p className="">Win %: <span className="yellow">{winPercentage}%</span></p>
+                    <p className="">Win %: <span className="purple">{winPercentage}%</span></p>
                     <p >Hourly: <span className={`${hourly >= 0 ? 'green' : 'red'}`}>${hourly}</span></p>
                 </div>
             </div>

@@ -1,7 +1,11 @@
 .dashboard-nav {
-    
+    display: grid;
     grid-area: 1 / 2 / 2 / 9;
-    /* grid-column-end: 9;
-    grid-column-start: 2;
-    grid-row-start: 1; */
+    grid-template-columns: 2fr 1fr;
+}
+
+.logout{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
 }

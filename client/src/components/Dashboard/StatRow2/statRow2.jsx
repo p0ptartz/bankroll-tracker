@@ -113,7 +113,7 @@ function StatRow2() {
                         return (
                             <div className="recent-session ">
                                 <div className="mx-3 h-100 d-flex justify-content-between align-items-center">
-                                    <p className="recent-session-p">
+                                    <p className="recent-session-p purple">
                                         {capitalizedLocation}
                                         <br />{" "}
                                         <span className="recent-session-location">Bensalem, PA</span>{" "}

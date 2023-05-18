@@ -39,7 +39,10 @@ function StatRow2() {
         return <p>Error: {error.message}</p>;
     }
 
-    const recentSessions = entries.slice(0, 5);
+    const recentSessions = entries.slice(-5);
+    recentSessions.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const sortedEntries = entries.slice().sort((a, b) => new Date(a.date) - new Date(b.date)); // sort entries by date by oldest date
 
     const optionsChart = {
         plugins: {
@@ -68,7 +71,7 @@ function StatRow2() {
         }
     }
     const dataChart = {
-        labels: ["", ...entries.map(entry => entry.date)],
+        labels: ["", ...sortedEntries.map(entry => entry.date)],
         datasets: [
             {
                 label: 'Total Win/Loss',
@@ -79,8 +82,8 @@ function StatRow2() {
                 }, [])],
                 backgroundColor: '#EAEC87',
                 borderColor: '#2DB75E',
-                pointBorderColor: 'white',
                 borderWidth: 1.3,
+                pointRadius: 0
 
             }
         ]
@@ -116,7 +119,7 @@ function StatRow2() {
                                     <p className="recent-session-p purple">
                                         {capitalizedLocation}
                                         <br />{" "}
-                                        <span className="recent-session-location">Bensalem, PA</span>{" "}
+                                        {/* <span className="recent-session-location">Bensalem, PA</span>{" "} */}
                                     </p>
                                     <p className="recent-date">
                                         {" "}

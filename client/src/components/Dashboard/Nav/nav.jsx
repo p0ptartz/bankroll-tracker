@@ -43,6 +43,53 @@ export default function Nav() {
 
     }
 
+    // SCRIPT TO QUICKLY ADD ENTRIES FOR DATA PURPOSES
+    const fillEntries = async () => {
+        const userId = localStorage.getItem('userId');
+        const currentDate = new Date();
+
+        const getRandomNumber = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+
+        const entriesPerMonth = 25;
+        const totalMonths = 12;
+
+        for (let month = 0; month < totalMonths; month++) {
+            const currentMonth = currentDate.getMonth() + month;
+            const currentYear = currentDate.getFullYear();
+
+            for (let entry = 0; entry < entriesPerMonth; entry++) {
+                const randomDate = new Date(currentYear, currentMonth, entry + 1);
+
+                const randomEntry = {
+                    userId: userId,
+                    date: randomDate.toLocaleDateString('en-US', {
+                        year: '2-digit',
+                        month: '2-digit',
+                        day: '2-digit'
+                    }),
+                    location: 'Random Location',
+                    buyIn: getRandomNumber(300, 1000),
+                    cashOut: getRandomNumber(-500, 1500),
+                    hours: getRandomNumber(4, 9),
+                    stake: '2/2',
+                    gameType: 'PLO'
+                };
+
+                try {
+                    await addEntry({ variables: randomEntry });
+                } catch (error) {
+                    console.log("Error occurred:", error);
+                }
+            }
+        }
+
+        // Refresh the page to display the updated entries
+        window.location.reload();
+    };
+
+
     return (
         <section className="dashboard-nav ">
             <div>
@@ -72,11 +119,12 @@ export default function Nav() {
                         <div className="modal-body">
                             <form onSubmit={handleAddEntry}>
                                 <input type="date" name="date" id="" className="w-100 my-2 py-1" />
-                                <input type="text" name="location" id="" className="w-100 my-2 py-1" />
-                                <input type="text" name="buyIn" id="" className="w-100 my-2 py-1" />
-                                <input type="text" name="cashOut" id="" className="w-100 my-2 py-1" />
-                                <input type="text" name="hours" id="" className="w-100 my-2 py-1" />
+                                <input type="text" name="location" placeholder="Location*" id="" className="w-100 my-2 py-1" />
+                                <input type="text" name="buyIn" placeholder="Total Buy In*" id="" className="w-100 my-2 py-1" />
+                                <input type="text" name="cashOut" placeholder="Cashed Out*" id="" className="w-100 my-2 py-1" />
+                                <input type="text" name="hours" placeholder="Hours Played*" id="" className="w-100 my-2 py-1" />
                                 <select name="stake" id="" className="w-100 my-2 py-1">
+                                    <option value="">Select a stake*</option>
                                     <option value="1/2">1/2</option>
                                     <option value="1/3">1/3</option>
                                     <option value="2/2">2/2</option>
@@ -89,6 +137,7 @@ export default function Nav() {
                                     <option value="25/50">25/50</option>
                                 </select>
                                 <select name="gameType" id="" className="w-100 my-2 py-1">
+                                    <option value="">Select a Game Type*</option>
                                     <option value="PLO">PLO</option>
                                     <option value="NLHE">NLHE</option>
                                     <option value="PLO5">PLO5</option>
@@ -106,6 +155,14 @@ export default function Nav() {
                 </div>
             </div>
 
+            {/* BUTTON TO ADD SCRIPTED ENTRIES */}
+            {/* <button
+                type="button"
+                className="px-4 py-2 session-btn"
+                onClick={fillEntries}
+            >
+                FILL ENTRIES
+            </button> */}
         </section>
     )
 }

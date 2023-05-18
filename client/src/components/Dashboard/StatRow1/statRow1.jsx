@@ -46,7 +46,8 @@ export default function StatRow1() {
     }, 0);
 
     // Calculate the win percentage
-    const winPercentage = (numWinningSessions / entries.length) * 100;
+    const percentage = (numWinningSessions / entries.length) * 100;
+    const winPercentage = Math.floor(percentage)
 
 
     if (loading) {

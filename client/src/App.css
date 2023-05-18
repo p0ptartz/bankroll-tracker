@@ -11,7 +11,9 @@ h3,
 h4{
     margin: 0 !important;
 }
-
+a{
+    cursor: pointer;
+}
 .green {
     color: rgb(5, 197, 5);
 }

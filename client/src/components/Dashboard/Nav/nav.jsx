@@ -2,10 +2,11 @@ import React from "react"
 import "./nav.css"
 import { useMutation } from "@apollo/client";
 import { ADD_ENTRY } from '../../../utils/mutations/addEntryMutation'
+import { useNavigate } from "react-router-dom";
 
 
 export default function Nav() {
-
+    const navigate = useNavigate()
     const [addEntry, { loading, error }] = useMutation(ADD_ENTRY);
 
     const handleAddEntry = async (e) => {
@@ -89,6 +90,15 @@ export default function Nav() {
         window.location.reload();
     };
 
+    const logout = () => {
+
+        localStorage.clear()
+        setTimeout(() => {
+            navigate("/");
+        }, 300);
+
+
+    }
 
     return (
         <section className="dashboard-nav ">
@@ -97,7 +107,7 @@ export default function Nav() {
                 </h5>
             </div>
             <div className="text-end">
-                <a className=" logout py-1 " href="">Logout</a>
+                <a className=" logout py-1" onClick={logout} >Logout</a>
             </div>
             <div className="d-flex flex-column justify-content-end py-2">
                 <h2 className="text-white" >DASHBOARD</h2>

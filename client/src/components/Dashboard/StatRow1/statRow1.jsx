@@ -9,8 +9,7 @@ export default function StatRow1() {
     const { loading, error, data } = useQuery(GET_USER_ENTRIES, {
         variables: { userId },
     });
-    console.log("user id here: " + userId)
-    console.log("DATA!? " + JSON.stringify(data));
+
     const entries = data?.getUserEntries || [];
     // entries.forEach(entry => {
     //     const date = entry.date;

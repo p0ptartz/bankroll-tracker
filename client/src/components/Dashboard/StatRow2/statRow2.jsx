@@ -28,7 +28,7 @@ function StatRow2() {
     });
 
     const entries = data?.getUserEntries || [];
-    console.log("entries: " + entries)
+
 
     if (loading) {
         return <p>Loading...</p>;

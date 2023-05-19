@@ -1,0 +1,14 @@
+.results {
+    grid-area: 2 / 2 / 7 / 9;
+}
+
+.results-grid {
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px ;
+}
+
+.date-choice{
+    grid-area: 1 / 1 / 2 / 3 ;
+}

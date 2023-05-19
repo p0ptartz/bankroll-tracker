@@ -33,6 +33,10 @@ a{
     color: rgb(147, 135, 253);
 }
 
+.pointer{
+    cursor: pointer;
+}
+
 .session-btn {
     background-color: rgb(69, 56, 184);
     border: none;

@@ -1,11 +1,21 @@
 import React from "react";
 import "./profile.css"
+import { useNavigate } from "react-router-dom";
+
+
 
 function Profile() {
-
+    const navigate = useNavigate()
     const userName = localStorage.getItem('userName');
     const email = localStorage.getItem('email')
 
+    const handleYearly = () => {
+        navigate("/yearly_results")
+    }
+
+    const handleLifetime = () => {
+        navigate("/dashboard")
+    }
 
     return (
         <>
@@ -17,14 +27,14 @@ function Profile() {
                 </div>
                 <div id="entries" className="my-4 ">
                     <p className="p-1">Entries</p>
-                    <p className="p-1">Add an Entry</p>
-                    <p className="p-1">View Entries</p>
+                    <p className="m-2 pointer">Add an Entry</p>
+                    <p className="m-2 pointer">View Entries</p>
                 </div>
                 <div id="analytics" className="my-4 ">
-                    <p className="p-1">Analytics</p>
-                    <p className="p-1">Lifetime</p>
-                    <p className="p-1">Year</p>
-                    <p className="p-1">Month</p>
+                    <p className="p-1 ">Analytics</p>
+                    <p className="m-2 pointer" onClick={handleLifetime}>Lifetime</p>
+                    <p className="m-2 pointer" onClick={handleYearly}>By Year</p>
+
                 </div>
 
 

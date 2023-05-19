@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css"
 import Landing from './components/Landing/landing';
 import Dashboard from './components/Dashboard/dashboard';
+import Yearly from './components/Yearly/yearly';
 
 const cache = new InMemoryCache();
 
@@ -34,6 +35,15 @@ function App() {
             element={
               <>
                 <Dashboard />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/yearly_results"
+            element={
+              <>
+                <Yearly />
               </>
             }
           />

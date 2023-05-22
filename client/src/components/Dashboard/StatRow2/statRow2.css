@@ -5,7 +5,7 @@
 
 .most-recent-container {
     
-    grid-area: 3 / 6 / 6 / 9;
+    grid-area: 3 / 6 / 6 / 10;
 }
 
 .most-recent {
@@ -55,41 +55,42 @@
 .graph-item-1{
     align-items: center;
     display: flex;
+    grid-area: 3 / 1 / 6 / 6;
     justify-content: center;
     padding: 5px;
 }
 
 .graph-item-2 {
     background-color: rgba(40, 61, 82, 0.753);
-    grid-area: 6 / 2 / 9 / 9;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-area: 6 / 1 / 9 / 10;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 30px 100px 100px 80px;
     
 }
 
 .monthly-chart {
-    grid-area: 2 / 1 / 5 / 5;
+    grid-area: 2 / 1 / 5 / 6;
     
 }
 
 #monthly-title {
-    grid-area: 1 / 1 / 2 / 5;
-    display: flex;
     align-items: center;
+    display: flex;
+    grid-area: 1 / 1 / 2 / 5;
 }
 
 .month-color {
-    grid-area: 2 / 5 / 5 / 6;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    grid-area: 2 / 6 / 5 / 8;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .colors{
-    display: flex;
     align-items: center;
+    display: flex;
 }
 .red-color{
     background-color: #B72D2D;

@@ -10,17 +10,29 @@
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 20px;
   grid-template-rows: 140px 100px 100px 100px 100px 100px 100px 100px;
   height: 100vh;
-  margin-right: 1em;
 overflow-y: scroll !important;
+  width: 100vw;
 }
 
 .profile-g-container{
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  overflow: hidden;
-  height: 100vh;
+  grid-template-columns: 3fr ;
+  
   margin-right: .5em;
+ 
+ 
 }
+
+.dashboard-grid::-webkit-scrollbar {
+  background-color: #3a4e61; /* Set the background color of the scrollbar track */
+  
+  width: 0.5em; /* Set the width of the scrollbar */
+}
+.dashboard-grid::-webkit-scrollbar-thumb {
+  background-color: #5f6e7e; /* Set the color of the scrollbar thumb */
+  
+}
+
 
 
 

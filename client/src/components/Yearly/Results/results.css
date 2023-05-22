@@ -12,3 +12,7 @@
 .date-choice{
     grid-area: 1 / 1 / 2 / 3 ;
 }
+
+.coming-soon {
+    grid-area: 2 / 1 / 7 / 15;
+}

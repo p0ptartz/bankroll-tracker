@@ -96,14 +96,14 @@ export default function StatRow1() {
                     <div className="d-flex justify-content-between">
                         <p className="">Total Hours Played:</p>
 
-                        <p className={`${hourSum >= 0 ? 'purple' : 'red'}`}>
+                        <p className={`${hourSum >= 0 ? 'text-primary' : 'red'}`}>
                             {hourSum}
                         </p>
                     </div>
 
                     <div className="d-flex justify-content-between ">
                         <p>Total Sessions Played: </p>
-                        <p className="purple">{sessionsPlayed}</p>
+                        <p className="text-primary">{sessionsPlayed}</p>
                     </div>
 
                 </div>
@@ -128,7 +128,7 @@ export default function StatRow1() {
             </div>
             <div className="stat-item-3 stat-item">
                 <div className="mx-3 h-100 d-flex justify-content-between align-items-center total-hours">
-                    <p className="">Win %: <span className="purple">{winPercentage}%</span></p>
+                    <p className="">Win %: <span className="text-primary">{winPercentage}%</span></p>
                     <div style={{ width: "50px", height: "50px" }}>
                         <Doughnut data={dataChart} options={optionsChart} />
                     </div>

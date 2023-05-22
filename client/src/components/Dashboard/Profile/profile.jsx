@@ -19,8 +19,8 @@ function Profile() {
 
     return (
         <>
-            <div className="profile-container p-5">
-                <div id="welcome" className="my-4">
+            <div className="profile-container  p-5">
+                <div id="welcome" className="my-4 ">
                     <p>WELCOME, </p>
                     <p >{userName}</p>
                     <p className="meh">{email}</p>

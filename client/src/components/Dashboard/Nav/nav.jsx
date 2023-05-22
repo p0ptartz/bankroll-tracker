@@ -111,10 +111,10 @@ export default function Nav() {
             </div>
             <div className="d-flex flex-column justify-content-end py-2">
                 <h2 className="text-white" >DASHBOARD</h2>
-                <p className="fs-6 purple" >Welcome to your dashboard!</p>
+                <p className="fs-6 text-primary" >Welcome to your dashboard!</p>
             </div>
             <div className="d-flex flex-column justify-content-end align-items-end py-3">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="px-4 py-2 session-btn">ADD A SESSION</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="px-4 py-2 btn btn-primary">ADD A SESSION</button>
             </div>
 
             {/* ADD A SESSION MODAL */}

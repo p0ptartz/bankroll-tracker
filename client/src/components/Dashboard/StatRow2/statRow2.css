@@ -1,5 +1,6 @@
 .graph-item-1{
     grid-area: 3/ 2 / 6 / 6 ;
+  
 }
 
 .most-recent-container {
@@ -57,3 +58,11 @@
     justify-content: center;
     padding: 5px;
 }
+
+.graph-item-2 {
+    background-color: rgba(40, 61, 82, 0.753);
+    grid-area: 6 / 2 / 9 / 7;
+    padding: 20px;
+   
+}
+

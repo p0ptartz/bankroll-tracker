@@ -17,41 +17,46 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <>
-                <Landing />
-              </>
-            }
-          />
-          <Route
-            exact
-            path="/dashboard"
-            element={
-              <>
-                <Dashboard />
-              </>
-            }
-          />
-          <Route
-            exact
-            path="/yearly_results"
-            element={
-              <>
-                <Yearly />
-              </>
-            }
-          />
+    <div id='overall'>
+      <ApolloProvider client={client}>
+
+        <Router>
+          <Routes>
+
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <Landing />
+                </>
+              }
+            />
+            <Route
+              exact
+              path="/dashboard"
+              element={
+                <>
+                  <Dashboard />
+                </>
+              }
+            />
+            <Route
+              exact
+              path="/yearly_results"
+              element={
+                <>
+                  <Yearly />
+                </>
+              }
+            />
 
 
-        </Routes>
-      </Router>
-    </ApolloProvider>
+          </Routes>
+        </Router>
+
+      </ApolloProvider>
+    </div>
   );
 }
 

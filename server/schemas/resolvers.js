@@ -27,8 +27,8 @@ const resolvers = {
 
         getUserEntries: async (_, { userId }) => {
             const user = await User.findById(userId).populate('entries');
-            console.log("this is the user: " + user)
-            console.log("here is the user.entries: " + user.entries)
+            // console.log("this is the user: " + user)
+            // console.log("here is the user.entries: " + user.entries)
             return user.entries;
 
         },
@@ -83,7 +83,7 @@ const resolvers = {
 
 
                 if (passwordMatch) {
-
+                    // console.log("user" + user)
                     return user;
                 } else {
                     throw new Error('Invalid email or password');

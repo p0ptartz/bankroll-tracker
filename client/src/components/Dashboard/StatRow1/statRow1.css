@@ -5,15 +5,15 @@
 
 .stat-item-1{
     
-    grid-area: 2 / 2 / 2 / 4;
+    grid-area: 2 / 1 / 2 / 3;
 }
 .stat-item-2{
     
-    grid-area: 2 / 4 / 2 / 7;
+    grid-area: 2 / 3 / 2 / 6;
 }
 .stat-item-3{
     
-    grid-area: 2 / 7 / 2 / 9;
+    grid-area: 2 / 6 / 2 / 9;
 }
 
 .total-hours{

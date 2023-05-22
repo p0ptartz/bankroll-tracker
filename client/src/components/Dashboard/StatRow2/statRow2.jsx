@@ -43,6 +43,8 @@ function StatRow2() {
     const sortedEntries = entries.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
 
     const optionsChart = {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: true
         },
@@ -197,14 +199,34 @@ function StatRow2() {
                         );
                     })}
                 </div>
+
             </div>
             <div className="graph-item-2">
-                <Bar
-                    data={barDataChart}
-                    options={barOptionsChart}
+                <p id="monthly-title" className="px-5 text-white ">Earnings by Month:</p>
+                <div className="monthly-chart px-2">
 
-                />
+                    <Bar
+                        data={barDataChart}
+                        options={barOptionsChart}
+                    />
+                </div>
+                <div className="month-color">
+                    <div className="colors">
+                        <div className="yellow-color">
+
+                        </div>
+                        <p className="py-2 px-2 text-white">Positive Earnings</p>
+                    </div>
+                    <div className="colors">
+                        <div className="red-color">
+
+                        </div>
+                        <p className="py-2 px-2 text-white">Negative Earnings</p>
+                    </div>
+                </div>
+
             </div>
+
         </>
     );
 }

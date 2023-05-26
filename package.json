@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "a poker bankroll tracker",
   "main": "server.js",
+  "homepage": "http://p0ptartz.github.io/bankroll-tracker",
   "scripts": {
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +22,8 @@
     "graphql": "^16.6.0",
     "moment": "^2.29.4",
     "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

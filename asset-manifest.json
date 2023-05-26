@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.70398c5d.css",
+    "main.js": "/static/js/main.a86c85b7.js",
+    "static/media/vecteezy_casino-3d-design-elements_8854552_921.png": "/static/media/vecteezy_casino-3d-design-elements_8854552_921.86e3650c637715d7aa55.png",
+    "index.html": "/index.html",
+    "main.70398c5d.css.map": "/static/css/main.70398c5d.css.map",
+    "main.a86c85b7.js.map": "/static/js/main.a86c85b7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70398c5d.css",
+    "static/js/main.a86c85b7.js"
+  ]
+}

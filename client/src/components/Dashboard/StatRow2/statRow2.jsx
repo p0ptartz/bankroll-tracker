@@ -3,6 +3,7 @@ import "./statRow2.css";
 import { useQuery } from "@apollo/client";
 import { GET_USER_ENTRIES } from "../../../utils/queries/getUserEntriesQuery";
 import { Line, Bar } from "react-chartjs-2";
+
 import {
     Chart as ChartJS,
     LineElement,

@@ -18,28 +18,38 @@ function Profile() {
     }
 
     return (
-        <>
-            <div className="profile-container  p-5">
-                <div id="welcome" className="my-4 ">
-                    <p>WELCOME, </p>
-                    <p >{userName}</p>
-                    <p className="meh">{email}</p>
-                </div>
-                <div id="entries" className="my-4 ">
-                    <p className="p-1">Entries</p>
-                    <p className="m-2 pointer">Add an Entry</p>
-                    <p className="m-2 pointer">View Entries</p>
-                </div>
-                <div id="analytics" className="my-4 ">
-                    <p className="p-1 ">Analytics</p>
-                    <p className="m-2 pointer" onClick={handleLifetime}>Lifetime</p>
-                    <p className="m-2 pointer" onClick={handleYearly}>By Year</p>
+
+        <div className="profile-container ">
+            <div className="picture-container">
+                <div className="profile-pic">
 
                 </div>
 
 
             </div>
-        </>
+            <div className="profile ">
+                <div id="welcome" className="pb-4">
+                    <p>WELCOME, </p>
+                    <p >{userName}</p>
+                    <p className="meh">{email}</p>
+                </div>
+                <div id="entries" className="pb-4 ">
+                    <p className="p-1">Entries</p>
+                    <p className="m-2 pointer">Add an Entry</p>
+                    <p className="m-2 pointer">View Entries</p>
+                </div>
+                <div id="analytics" className=" ">
+                    <p className="p-1 ">Analytics</p>
+                    <p className="m-2 pointer" onClick={handleLifetime}>Lifetime</p>
+                    <p className="m-2 pointer" onClick={handleYearly}>By Year</p>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
     )
 }
 

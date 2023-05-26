@@ -11,9 +11,8 @@ function Dashboard() {
             <div className="dash-container">
 
 
-                <div className="profile-g-container">
-                    <Profile />
-                </div>
+
+                <Profile />
 
 
                 <div className="dashboard-grid">

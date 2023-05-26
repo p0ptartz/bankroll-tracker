@@ -1,11 +1,14 @@
 .graph-item-1{
-    grid-area: 3/ 1 / 6 / 5 ;
-  
+    align-items: center;
+    display: flex;
+    grid-area: 3 / 2 / 6 / 7;
+    justify-content: center;
+    padding: 5px;
 }
 
 .most-recent-container {
     
-    grid-area: 3 / 6 / 6 / 10;
+    grid-area: 3 / 7 / 6 / 11;
 }
 
 .most-recent {
@@ -52,18 +55,12 @@
     
 }
 
-.graph-item-1{
-    align-items: center;
-    display: flex;
-    grid-area: 3 / 1 / 6 / 6;
-    justify-content: center;
-    padding: 5px;
-}
+
 
 .graph-item-2 {
     background-color: rgba(40, 61, 82, 0.753);
     display: grid;
-    grid-area: 6 / 1 / 9 / 10;
+    grid-area: 6 / 2 / 9 / 11;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 30px 100px 100px 80px;
     

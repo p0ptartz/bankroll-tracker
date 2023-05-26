@@ -1,6 +1,6 @@
 .dashboard-nav {
     display: grid;
-    grid-area: 1 / 1 / 2 / 10;
+    grid-area: 1 / 2 / 2 / 11;
     grid-template-columns: 2fr 1fr;
 }
 

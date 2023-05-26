@@ -1,8 +1,13 @@
 .profile-container{
     background-color: rgba(40, 61, 82, 0.753);
     color: aliceblue;
-
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 140px 100px 100px 100px 100px 100px;
+    max-width: 300px;
+    min-width: 150px;
+    overflow: hidden;
+    width: 25vw;
 }
 
 .meh{
@@ -10,3 +15,29 @@
     font-size: small;
 }
 
+.profile {
+    grid-area: 2 / 1 / 7 / 3;
+    margin: 0 auto;
+    margin-top: .5em;
+    
+}
+
+
+.picture-container{
+align-items: center;
+display: flex;
+    grid-area: 1 / 1 / 2 / 3;
+    justify-content: center;
+
+}
+
+
+.profile-pic{
+    background-image: url(./vecteezy_casino-3d-design-elements_8854552_921.png);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+   
+    width: 100px;
+}

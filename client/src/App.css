@@ -5,6 +5,8 @@
 }
 html{
     background-color: rgb(21, 33, 43);
+    overflow: hidden;
+    overflow-x: hidden;
 }
 p,
 h1,

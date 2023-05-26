@@ -1,5 +1,6 @@
 .dash-container{
   display: flex;
+  justify-content: space-around;
   overflow: hidden;
 }
 
@@ -7,21 +8,14 @@
   background-color: rgb(21, 33, 43);
   display: grid;
   grid-gap: 0.5em;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 20px;
+  grid-template-columns: .0em 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 20px;
   grid-template-rows: 140px 100px 100px 100px 100px 100px 100px 100px;
   height: 100vh;
-overflow-y: scroll !important;
+  overflow-y: scroll !important;
   width: 100vw;
 }
 
-.profile-g-container{
-  display: grid;
-  grid-template-columns: 3fr ;
-  
-  margin-right: .5em;
- 
- 
-}
+
 
 .dashboard-grid::-webkit-scrollbar {
   background-color: #3a4e61; /* Set the background color of the scrollbar track */

@@ -20,7 +20,7 @@ function App() {
     <div id='overall'>
       <ApolloProvider client={client}>
 
-        <Router>
+        <Router >
           <Routes>
 
             <Route

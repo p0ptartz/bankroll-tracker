@@ -1,7 +1,8 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://p0ptartz.github.io/bankroll-tracker/",
   "dependencies": {
     "@apollo/client": "^3.7.11",
     "@testing-library/jest-dom": "^5.16.5",

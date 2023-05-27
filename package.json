@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "a poker bankroll tracker",
   "main": "server.js",
-  "homepage": "http://p0ptartz.github.io/bankroll-tracker",
+  "homepage": "https://p0ptartz.github.io/bankroll-tracker/",
+  "private": "false",
   "scripts": {
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "cd client && npm run build && gh-pages -b gh-pages -d build",
+    "build": "cd client && npm run build"
   },
   "author": "",
   "license": "ISC",

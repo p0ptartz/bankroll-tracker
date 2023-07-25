@@ -9,7 +9,7 @@ const cache = new InMemoryCache();
 
 const client = new ApolloClient({
   cache,
-  uri: 'http://localhost:3001/graphql',
+  uri: 'https://bankroll-tracker.onrender.com/graphql',
 
 });
 

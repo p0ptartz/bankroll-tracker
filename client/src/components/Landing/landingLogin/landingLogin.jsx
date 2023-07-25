@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function LandingLogin() {
     const navigate = useNavigate()
     const [showBody, setShowBody] = useState(false);
-    const [login, { loading, error }] = useMutation(LOGIN_MUTATION)
+    const [login] = useMutation(LOGIN_MUTATION)
 
     const handleLogin = async (e) => {
         e.preventDefault();

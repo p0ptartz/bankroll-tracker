@@ -26,7 +26,7 @@ function LandingNav() {
 
             <nav className="navbar navbar-expand-lg py-3 fixed-top ">
                 <div className="container ">
-                    <a className="navbar-brand text-light" href="#"><span className="text-warning">d</span>P</a>
+                    <a className="navbar-brand text-light" href="google.com"><span className="text-warning">d</span>P</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">

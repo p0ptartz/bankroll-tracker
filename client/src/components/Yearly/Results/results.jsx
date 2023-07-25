@@ -7,7 +7,7 @@ import { GET_USER_ENTRIES } from "../../../utils/queries/getUserEntriesQuery";
 function Results() {
     const userId = localStorage.getItem("userId");
 
-    const { loading, error, data } = useQuery(GET_USER_ENTRIES, {
+    const data = useQuery(GET_USER_ENTRIES, {
         variables: { userId },
     });
 
@@ -31,7 +31,7 @@ function Results() {
                         <ul className="dropdown-menu">
                             {uniqueYears.map(year => (
                                 <li >
-                                    <a className="dropdown-item" href="#">{year}</a>
+                                    <a className="dropdown-item" href="google.com">{year}</a>
                                 </li>
                             ))}
                         </ul>

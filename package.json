@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "a poker bankroll tracker",
   "main": "server.js",
-  "homepage": "https://p0ptartz.github.io/bankroll-tracker/",
-  "private": "false",
+  "private": "true",
   "scripts": {
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1",

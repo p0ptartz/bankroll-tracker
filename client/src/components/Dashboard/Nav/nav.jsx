@@ -9,6 +9,7 @@ function Nav() {
     const navigate = useNavigate()
     const [addEntry] = useMutation(ADD_ENTRY);
 
+
     const handleAddEntry = async (e) => {
         e.preventDefault()
         const userId = localStorage.getItem('userId');
@@ -36,7 +37,8 @@ function Nav() {
             await addEntry({ variables });
 
             form.reset();
-            form.submit();
+
+            window.location.reload();
 
         } catch (error) {
             console.log("Error occurred:", error)
@@ -176,6 +178,7 @@ function Nav() {
                 FILL ENTRIES
             </button> */}
             </section>
+
         </>
     )
 };

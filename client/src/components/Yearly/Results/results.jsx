@@ -3,7 +3,6 @@ import './results.css'
 import { useQuery } from "@apollo/client";
 import { GET_USER_ENTRIES } from "../../../utils/queries/getUserEntriesQuery";
 
-
 function Results() {
     const userId = localStorage.getItem("userId");
 
@@ -11,14 +10,12 @@ function Results() {
         variables: { userId },
     });
 
-    const entries = data?.getUserEntries || [];
-
-
-    // removes duplicated years into one year
+    // Move the 'entries' inside the useMemo callback function
     const uniqueYears = useMemo(() => {
+        const entries = data?.getUserEntries || [];
         const yearsSet = new Set(entries.map(entry => "20" + entry.date.slice(-2)));
         return Array.from(yearsSet);
-    }, [entries]);
+    }, [data?.getUserEntries]);
 
     return (
         <section className="results">
@@ -30,7 +27,7 @@ function Results() {
                         </button>
                         <ul className="dropdown-menu">
                             {uniqueYears.map(year => (
-                                <li >
+                                <li key={year}>
                                     <a className="dropdown-item" href="google.com">{year}</a>
                                 </li>
                             ))}
@@ -39,9 +36,8 @@ function Results() {
                 </div>
                 <h1 className="text-warning text-center coming-soon">IN DEVELOPMENT, COMING SOON!</h1>
             </div>
-
         </section>
     )
 }
 
-export default Results
+export default Results;

@@ -71,7 +71,7 @@ function LandingSignup() {
                         <input name="password" type="password" className="form-input" placeholder="Password*" required></input>
                         <button type="submit" className="form-submit">Sign Up</button>
                     </form >
-                    <p id="toggleForm" >Already have an account? Sign In</p>
+
                 </div>
 
 

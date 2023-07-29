@@ -9,3 +9,11 @@
     font-size: 14px;
     text-decoration: none;
 }
+
+.text-end{
+    display: flex;
+    justify-content: flex-end;
+}
+.text-end p {
+    cursor: pointer;
+}

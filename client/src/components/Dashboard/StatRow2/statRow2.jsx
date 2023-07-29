@@ -28,7 +28,19 @@ function StatRow2() {
     });
 
     const entries = data?.getUserEntries || [];
+    console.log("ENTRIES " + JSON.stringify(entries, null, 2))
 
+    // Create a copy of the entries array -- spread operator --  desc order comparing dates
+    const sortedEntriesCopy = [...entries];
+    sortedEntriesCopy.sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
+    });
+
+    const recentSessions = sortedEntriesCopy.slice(0, 5);
+
+    console.log("RECENT SORTED ENTRIES:\n", JSON.stringify(sortedEntriesCopy, null, 2));
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -38,9 +50,8 @@ function StatRow2() {
         return <p>Error: {error.message}</p>;
     }
 
-    const recentSessions = entries.slice(-5);
-    recentSessions.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+    // data for bar chart
     const sortedEntries = entries.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
 
     const optionsChart = {
@@ -76,7 +87,7 @@ function StatRow2() {
         datasets: [
             {
                 label: 'Total Win/Loss',
-                data: [0, ...entries.reduce((accumulator, entry) => {
+                data: [0, ...sortedEntries.reduce((accumulator, entry) => {
                     const difference = entry.cashOut - entry.buyIn;
                     const lastValue = accumulator.length > 0 ? accumulator[accumulator.length - 1] : 0;
                     return [...accumulator, lastValue + difference];

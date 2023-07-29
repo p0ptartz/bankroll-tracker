@@ -1,21 +1,21 @@
 import React from "react";
 import "./profile.css"
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 
 
 function Profile() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const userName = localStorage.getItem('userName');
     const email = localStorage.getItem('email')
 
-    const handleYearly = () => {
-        navigate("/yearly_results")
-    }
+    // const handleYearly = () => {
+    //     navigate("/yearly_results")
+    // }
 
-    const handleLifetime = () => {
-        navigate("/dashboard")
-    }
+    // const handleLifetime = () => {
+    //     navigate("/dashboard")
+    // }
 
     return (
 
@@ -34,15 +34,15 @@ function Profile() {
                     <p className="meh">{email}</p>
                 </div>
                 <div id="entries" className="pb-4 ">
-                    <p className="p-1">Entries</p>
-                    <p className="m-2 pointer">Add an Entry</p>
-                    <p className="m-2 pointer">View Entries</p>
+                    <p className="purple">Section Title 1</p>
+                    <p className="m-2 px-1 pointer">Section Data</p>
+                    <p className="m-2 px-1 pointer">Section Data</p>
                 </div>
-                <div id="analytics" className=" ">
-                    <p className="p-1 ">Analytics</p>
-                    <p className="m-2 pointer" onClick={handleLifetime}>Lifetime</p>
-                    <p className="m-2 pointer" onClick={handleYearly}>By Year</p>
-
+                <div id="entries" className="pb-4 ">
+                    <p className="purple">Section Title 2</p>
+                    <p className="m-2 px-1 pointer">Section Data</p>
+                    <p className="m-2 px-1 pointer">Section Data</p>
+                    <p className="m-2 px-1 pointer">Section Data</p>
                 </div>
             </div>
 

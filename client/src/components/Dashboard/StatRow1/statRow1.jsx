@@ -20,7 +20,7 @@ export default function StatRow1() {
 
     // });
 
-    // REDUCE METHOD reduces array into a single value - sum = accumlated value & entry = current object.
+    // REDUCE METHOD reduces array into a single value - sum = accumulated value & entry = current object.
 
     const hourSum = entries.reduce((sum, entry) => {
         return sum + entry.hours;
